@@ -52,19 +52,31 @@ class API {
   }
 
   getMinions() {
-    return this.apiRequest("GET", "/minions", {});
+    const params = {
+      metadata: { runtype: "SALTGUI" }
+    };
+    return this.apiRequest("GET", "/minions", params);
   }
 
   getKeys() {
-    return this.apiRequest("GET", "/keys", {});
+    const params = {
+      metadata: { runtype: "SALTGUI" }
+    };
+    return this.apiRequest("GET", "/keys", params);
   }
 
   getJobs() {
-    return this.apiRequest("GET", "/jobs", {});
+    const params = {
+      metadata: { runtype: "SALTGUI" }
+    };
+    return this.apiRequest("GET", "/jobs", params);
   }
 
   getJob(id) {
-    return this.apiRequest("GET", "/jobs/" + id, {});
+    const params = {
+      metadata: { runtype: "SALTGUI" }
+    };
+    return this.apiRequest("GET", "/jobs/" + id, params);
   }
 
   getGrainsItems(minion) {
@@ -126,7 +138,8 @@ class API {
   getJobsActive() {
     const params = {
       client: "runner",
-      fun: "jobs.active"
+      fun: "jobs.active",
+      metadata: { runtype: "SALTGUI" }
     };
     return this.apiRequest("POST", "/", params).catch(console.error);
   }

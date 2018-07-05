@@ -52,3 +52,7 @@
 #page_job .task .duration {
   font-size: 12px;
 }
+
+#job .metadata {
+  font-size: 14px;
+}
