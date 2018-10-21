@@ -9,7 +9,6 @@ class JobRoute extends Route {
     const job = this;
     const id = decodeURIComponent(window.getQueryParam("id"));
     return new Promise(function(resolve, reject) {
-      job.resolvePromise = resolve;
       job.router.api.getJob(id).then(job._onJobData);
     });
   }
